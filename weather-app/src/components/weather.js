@@ -4,7 +4,7 @@ const Weather = (props) => {
     return (
         <div>
         {props.country && props.city && <p>Location: {props.city},    {props.country}</p>}
-      {props.temperature && <p>Temperature: {props.temperature} °F</p>}
+      {props.temperature && <p>Temperature: {Math.round(props.temperature)} °F</p>}
       {props.humidity && <p>Humidity: {props.humidity}</p>}
       {props.description && <p>Conditions:  {props.description}</p>}
       {props.error && <p>{props.error}</p>}
