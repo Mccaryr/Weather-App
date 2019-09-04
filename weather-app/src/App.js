@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import Titles from './components/title';
 import Form from './components/form';
 import Weather from './components/weather';
+import Navbar from './components/navbar';
 import './App.css';
 
 

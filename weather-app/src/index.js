@@ -2,20 +2,57 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import WeeklyContainer from './containers/weeklycontainer'; 
+import Title from './components/title';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+const link = {
+    width: '100px',
+    padding: '12px',
+    margin: '0 6px 6px',
+    background: 'blue',
+    textDecoration: 'none',
+    color: 'white',
+}
+
+const Navbar = () => 
+    <div>
+        <NavLink 
+            to="/"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Home</NavLink>
+        <NavLink
+            to="/WeeklyForecast"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Weekly Forecast</NavLink>
+        <NavLink
+            to="/DailyForecast"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Daily Forecast</NavLink>
+    </div>;
+
+
+
 
 ReactDOM.render((
     <Router>
-        <React.Fragment>
-            <Route path="/" component={App} />
-            {/* <Route exact path="/about" component={About} />
-            <Route exact path="/login" component={Login} /> */}
-        </React.Fragment>
-    </Router>),
-document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+     <React.Fragment>
+         <Navbar />
+      <Route exact path="/" component={Title} />
+      <Route exact path="/WeeklyForecast" component={WeeklyContainer} />
+      <Route exact path="/DailyForecast" component={App} />
+    </React.Fragment>
+</Router>),
+    document.getElementById('root')
+)
 serviceWorker.unregister();
