@@ -26,19 +26,19 @@ const Navbar = () =>
             }}
             >Home</NavLink>
         <NavLink
-            to="/WeeklyForecast"
-            exact style={link}
-            activeStyle={{
-                background: 'darkblue'
-            }}
-            >Weekly Forecast</NavLink>
-        <NavLink
             to="/DailyForecast"
             exact style={link}
             activeStyle={{
                 background: 'darkblue'
             }}
             >Daily Forecast</NavLink>
+        <NavLink
+            to="/WeeklyForecast"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Weekly Forecast</NavLink>
     </div>;
 
 
@@ -49,8 +49,8 @@ ReactDOM.render((
      <React.Fragment>
          <Navbar />
       <Route exact path="/" component={Title} />
-      <Route exact path="/WeeklyForecast" component={WeeklyContainer} />
       <Route exact path="/DailyForecast" component={App} />
+      <Route exact path="/WeeklyForecast" component={WeeklyContainer} />
     </React.Fragment>
 </Router>),
     document.getElementById('root')

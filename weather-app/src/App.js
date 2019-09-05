@@ -4,6 +4,8 @@ import Titles from './components/title';
 import Form from './components/form';
 import Weather from './components/weather';
 import Navbar from './components/navbar';
+import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import './App.css';
 
 
