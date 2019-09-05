@@ -1,18 +1,40 @@
-// import React from 'react'; 
-// import { BrowserRouter as Router, Route } from 'react-dom';
-// import App from '../App';
-// import Weather from './weather';
-// import WeeklyContainer from '../containers/weeklycontainer';
+import React from 'react'; 
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
-// const Navbar = () => {
-//     return (
-//         <div>
-//         </div>
-//         // <Router>
-//         //    <Route exact path="/" component={App} render={()=> <h1>Home!</h1>}  />
-//         //    {/* <Route path="/weekly_weather" component={WeeklyContainer}  render={()=> <h1>Weekly Forecast!</h1>}   /> */}
-//         // </Router>
-//     )
-// }
 
-// export default Navbar;
+const link = {
+    width: '100px',
+    padding: '12px',
+    margin: '0 6px 6px',
+    background: 'blue',
+    textDecoration: 'none',
+    color: 'white',
+}
+
+const Navbar = () => 
+
+    <div>
+        <NavLink 
+            to="/"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Home</NavLink>
+        <NavLink
+            to="/DailyForecast"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Daily Forecast</NavLink>
+        <NavLink
+            to="/WeeklyForecast"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Weekly Forecast</NavLink>
+    </div>;
+
+export default Navbar;
