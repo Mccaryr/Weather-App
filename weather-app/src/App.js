@@ -6,6 +6,8 @@ import Weather from './components/weather';
 import Navbar from './components/navbar';
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
+import StoreRef from './store/store';
+import { fetchWeather } from './actions/fetchweather';
 import './App.css';
 
 
