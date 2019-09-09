@@ -1,12 +1,22 @@
-
-
 const fetchWeatherData =(state= {
-    weatherData: []
+    weather: []
 }, action) => {
-    if(action.type === "FETCH_WEATHER"){
-        state = {...state, weatherData: action.payload}
+    switch (action.type) {
+        case 'FETCH_WEATHER': 
+        console.log("fetch weather reducer hit")
+        return action.weather 
+    default:
+    console.log("default hit") 
+        return state 
+        
     }
-    return state;
-}
+} 
+// {
+//     console.log("hitting reducer")
+//     if(action.type === "FETCH_WEATHER"){
+//         state = {...state, weatherData: action.payload}
+//     }
+//     return state;
+// }
 
 export default fetchWeatherData;

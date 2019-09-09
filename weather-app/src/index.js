@@ -2,28 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import StoreRef from './store/store';
+
 import WeeklyContainer from './containers/weeklycontainer'; 
 import Title from './components/title';
 import Navbar from './components/navbar';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import fetchWeatherData from './reducers/weather_reducer';
 
 
-const middleware = applyMiddleware(thunk)
-const store = createStore(fetchWeatherData, middleware)
+
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 
 
 // import * as serviceWorker from './serviceWorker';
 
-// const store = createStore(
-//     reducers, composeEnhancer(applyMiddleware(thunk)),
-// )
+const store = createStore(
+    fetchWeatherData, composeEnhancers(applyMiddleware(thunk)),
+)
 
 
 
@@ -36,7 +37,7 @@ ReactDOM.render(
             <Route exact path="/DailyForecast" component={App} />
             <Route exact path="/WeeklyForecast" component={WeeklyContainer} />
         </React.Fragment>
-    </Router>)
+    </Router>
     </Provider>, document.getElementById('root')
 )
 
