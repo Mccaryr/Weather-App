@@ -13,7 +13,8 @@ import './App.css';
 class App extends React.Component {
 
   // state = {
-  //   weather: "" 
+  //   city: "",
+  //   country: "" 
   // }
 
   state = {
@@ -33,19 +34,19 @@ class App extends React.Component {
     this.props.fetchWeather(city, country);
   }
 
-  handleChange = e => {
-    console.log("jklfdsa")
-    let value = e.target.value; 
-    this.setState({
-      value : value 
-    })
-  } 
+  // handleChange = e => {
+  //   console.log("jklfdsa")
+  //   let value = e.target.value; 
+  //   this.setState({
+  //     value : value 
+  //   })
+  // } 
 
-  handleSubmit = e => {
-    console.log("handleSubmit hit")
-    e.preventDefault() 
-    this.props.fetchWeather();
-  }
+  // handleSubmit = e => {
+  //   console.log("handleSubmit hit")
+  //   e.preventDefault() 
+  //   this.props.fetchWeather();
+  // }
 
   // getWeather = async (e) => {
   //   e.preventDefault();
@@ -99,9 +100,10 @@ function mapStateToProps(state) {
   return { weather: state.weather }
 }
 
-function mapDispatchToProps(dispatch) {
-  return { fetchWeather: ()=> dispatch(fetchWeather())}
-}
+// function mapDispatchToProps(dispatch) {
+//   return { fetchWeather: ()=> dispatch(fetchWeather())
+//   }
+// }
 
 // export default App;
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, {fetchWeather})(App)
