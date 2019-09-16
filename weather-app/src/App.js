@@ -3,28 +3,17 @@ import logo from './logo.svg';
 import Titles from './components/title';
 import Form from './components/form';
 import Weather from './components/weather';
+// import fetchWeatherData from './reducers/weather_reducer';
 import { connect } from 'react-redux';
 import { fetchWeather } from './actions/fetchweather';
 import './App.css';
 
 
-// const Api_Key = "9e8c189515b44e2746bffee97cd1e61f";
 
 class App extends React.Component {
 
-  // state = {
-  //   city: "",
-  //   country: "" 
-  // }
 
-  state = {
-    temperature: undefined,
-    city: undefined, 
-    country: undefined,
-    humidity: undefined,
-    description: undefined,
-    error: undefined 
-  }
+
 
   search = (e,inputData) => {
     e.preventDefault();
@@ -77,19 +66,25 @@ class App extends React.Component {
   // }
 
   render() {
+    debugger;
+    const temperature = this.props.weather.temp 
+    const humidity = this.props.weather.humidity 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Titles />
         <Form onSubmit={this.search}/>
+        {/* {weather} */}
         <Weather 
-        temperature={this.state.temperature}
-        city={this.state.city}
-        country={this.state.country}
-        humidity={this.state.humidity}
-        description={this.state.description}
-        error={this.state.error} /> 
+        temp={temperature}
+        humid={humidity}
+        // city={this.state.city}
+        // country={this.state.country}
+        // humidity={this.state.humidity}
+        // description={this.state.description}
+        // error={this.state.error} 
+        /> 
       </header>
     </div>
   );
@@ -97,7 +92,9 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { weather: state.weather }
+  // debugger;
+  console.log(state)
+  return { weather: state.weatherData }
 }
 
 // function mapDispatchToProps(dispatch) {

@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Weather = (props) => {
+    // const weather = this.props.weatherData.map(data => {
+    //     return <p>Temperature: {data.main.temp}</p>
+    // })
+ 
     return (
         <div>
-        {props.country && props.city && <p>Location: {props.city},    {props.country}</p>}
-      {props.temperature && <p>Temperature: {Math.round(props.temperature)} °F</p>}
-      {props.humidity && <p>Humidity: {props.humidity}</p>}
-      {props.description && <p>Conditions:  {props.description}</p>}
-      {props.error && <p>{props.error}</p>}
- 
+        <p>Temperature: {Math.round(props.temp)}°F </p> 
+        <p>Humidity: {props.humid}% </p> 
         </div>
     )
 }
