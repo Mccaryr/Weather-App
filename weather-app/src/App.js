@@ -41,7 +41,6 @@ class App extends React.Component {
         <img src={logo} className="App-logo" alt="logo" />
         <Titles />
         <Form onSubmit={this.search}/>
-        {/* {weather} */}
         <Weather 
         temp={temperature}
         humid={humidity}

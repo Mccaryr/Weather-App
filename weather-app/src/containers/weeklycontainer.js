@@ -1,5 +1,8 @@
 import React from 'react';
 import WeeklyForm from '../components/weeklyform';
+import WeeklyWeather from '../components/weeklyweather';
+import { connect } from 'react-redux';
+import { fetchWeeklyWeather } from '../actions/fetchweeklyweather';
 
 class WeeklyContainer extends React.Component {
 
@@ -12,14 +15,25 @@ class WeeklyContainer extends React.Component {
       }
 
     render() {
+        // const todaystemperature = this.props.weeklyWeather[0].main.temp 
+        debugger;
         return (
             <div>
             <h1>Weekly Weather Data</h1> 
-            <WeeklyForm />
+            <WeeklyForm  submitHandler={this.searchForWeeklyData}/>
+            <WeeklyWeather 
+            // todaysTemp = {todaystemperature}
+            />
             </div>
         )
     }
 }
 
-export default WeeklyContainer;
-// export default connect(mapStateToProps, {fetchWeeklyWeather})(WeeklyContainer);
+function mapStateToProps(state) {
+    // debugger;
+    // console.log(state)
+    return { weeklyWeather: state.weatherData }
+  }
+
+// export default WeeklyContainer;
+export default connect(mapStateToProps, {fetchWeeklyWeather})(WeeklyContainer);

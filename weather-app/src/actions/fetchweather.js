@@ -13,10 +13,9 @@ export const fetchWeather = (city, country) => {
             console.log(resp.main)
             return resp 
         })
-        .then(data => dispatch({type: "FETCH_WEATHER", weather: data.main}))
+        .then(data => dispatch({type: "FETCH_WEATHER", weather: data.main }))
        
     }
 }
 
 
-// `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`
