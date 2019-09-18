@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Titles from './components/title';
 import Form from './components/form';
 import Weather from './components/weather';
@@ -38,7 +37,6 @@ class App extends React.Component {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <Titles />
         <Form onSubmit={this.search}/>
         <Weather 
@@ -53,7 +51,6 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   // debugger;
-  console.log(state)
   return { weather: state.weatherData }
 }
 

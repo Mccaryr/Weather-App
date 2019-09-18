@@ -14,9 +14,12 @@ class WeeklyContainer extends React.Component {
         this.props.fetchWeeklyWeather(city, country);
       }
 
+
+
     render() {
-        // const todaystemperature = this.props.weeklyWeather[0].main.temp 
-        debugger;
+        // debugger;
+        // const todaystemperature = this.props.weeklyWeather[0].main.temp
+        // console.log(todaysTemp[0])
         return (
             <div>
             <h1>Weekly Weather Data</h1> 
@@ -24,6 +27,7 @@ class WeeklyContainer extends React.Component {
             <WeeklyWeather 
             // todaysTemp = {todaystemperature}
             />
+          
             </div>
         )
     }
