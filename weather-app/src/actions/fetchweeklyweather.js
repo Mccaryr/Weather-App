@@ -10,7 +10,7 @@ export const fetchWeeklyWeather = (city, country) => {
         return fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=imperial&appid=${Api_Key}`)
         .then(response => response.json())
         .then(resp => {
-            console.log(resp.list)
+            console.log(resp.list[0].main)
             return resp 
         })
         .then(data => dispatch({type: "FETCH_WEEKLYWEATHER", weather: data.list }))
