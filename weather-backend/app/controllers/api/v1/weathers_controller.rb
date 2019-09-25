@@ -15,6 +15,10 @@ class Api::V1::WeathersController < ApplicationController
         end  
     end 
 
+    def blah 
+        puts "testing github"
+    end 
+
     def show 
         @weather = @location.weathers.find_by(id: params[:id])
         render json: @weather
@@ -34,4 +38,4 @@ class Api::V1::WeathersController < ApplicationController
     end 
 end
 
-# Failure to commit ealier due to outage
+
