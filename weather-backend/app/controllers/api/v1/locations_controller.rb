@@ -5,10 +5,6 @@ class Api::V1::LocationsController < ApplicationController
         render json: @locations 
     end 
 
-    def blah 
-        rewqr
-    end 
-
     def create 
         @location = Location.new(location_params)
         if @location.save 
