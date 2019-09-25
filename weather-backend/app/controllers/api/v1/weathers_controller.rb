@@ -33,3 +33,5 @@ class Api::V1::WeathersController < ApplicationController
         @location = Location.find(params[:location_id])
     end 
 end
+
+# Failure to commit ealier due to outage
