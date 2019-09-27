@@ -2,8 +2,12 @@ class Api::V1::WeathersController < ApplicationController
     before_action :set_location
 
     def index 
-      @weathers = @location.weathers
-      render json: @weathers  
+        if @location 
+            @weathers = @location.weathers
+        else 
+            @locations = Location.all 
+        end  
+        render json: @weathers
     end 
 
     def create 
@@ -13,10 +17,6 @@ class Api::V1::WeathersController < ApplicationController
         else 
             render json: {error: 'No Weather Data'}
         end  
-    end 
-
-    def blah 
-        puts "testing github"
     end 
 
     def show 

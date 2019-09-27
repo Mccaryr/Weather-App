@@ -12,7 +12,11 @@ import './App.css';
 class App extends React.Component {
 
 
-
+// componentDidMount() {
+//   fetch('http://localhost:3000/api/v1/locations')
+//   .then(resp => resp.json())
+//   .then(data => console.log(data))
+// }
 
   search = (e,inputData) => {
     e.preventDefault();
