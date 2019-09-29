@@ -5,6 +5,8 @@ import Weather from './components/weather';
 // import fetchWeatherData from './reducers/weather_reducer';
 import { connect } from 'react-redux';
 import { fetchWeather } from './actions/fetchweather';
+import { addLocation} from './actions/addLocation';
+import { fetchLocation } from './actions/fetchLocation'
 import './App.css';
 
 
@@ -12,18 +14,24 @@ import './App.css';
 class App extends React.Component {
 
 
-// componentDidMount() {
-//   fetch('http://localhost:3000/api/v1/locations')
-//   .then(resp => resp.json())
-//   .then(data => console.log(data))
-// }
+componentDidMount() {
+  // fetch('http://localhost:3001/api/v1/locations')
+  // .then(resp => resp.json())
+  // .then(data => console.log(data))
+  this.props.fetchLocation()
+}
 
   search = (e,inputData) => {
     e.preventDefault();
     console.log(inputData)
     let city = inputData.city
     let country = inputData.country 
-    this.props.fetchWeather(city, country);
+    this.props.fetchWeather(city, country)
+    this.props.addLocation(city, country) 
+    this.setState({
+      city: '',
+      country: ''
+    })
   }
 
   // handleSubmit = e => {
@@ -64,4 +72,4 @@ function mapStateToProps(state) {
 // }
 
 // export default App;
-export default connect(mapStateToProps, {fetchWeather})(App)
+export default connect(mapStateToProps, {fetchLocation})(App)
