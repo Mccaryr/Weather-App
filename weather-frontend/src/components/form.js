@@ -26,5 +26,5 @@ class Form extends React.Component {
     )
     }
 }
-export default Form
-// export default connect(null, {addLocation})(Form)
+// export default Form
+export default connect(null, {addLocation})(Form)

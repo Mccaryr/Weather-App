@@ -27,7 +27,7 @@ class App extends React.Component {
     let city = inputData.city
     let country = inputData.country 
     this.props.fetchWeather(city, country)
-    // this.props.addLocation(inputData) 
+    this.props.addLocation(inputData) 
     // this.setState({
     //   city: '',
     //   country: ''
@@ -71,4 +71,4 @@ function mapStateToProps(state) {
 // }
 
 // export default App;
-export default connect(mapStateToProps, {fetchWeather})(App)
+export default connect(mapStateToProps, {fetchWeather, addLocation})(App)
