@@ -7,7 +7,7 @@ const WeeklyWeather = (props) => {
  
     return (
         <div>
-        <p>Temperature: {Math.round(props.todaysTemp)}°F </p> 
+        <p>Temperature: {Math.round(props.tomorrowsTemp)}°F </p> 
         {/* <p>Humidity: {props.humid}% </p>  */}
         </div>
     )

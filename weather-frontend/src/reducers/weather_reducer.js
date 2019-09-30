@@ -11,8 +11,9 @@
         // debugger;
         }
         case 'FETCH_WEEKLYWEATHER': {
-            // console.log(action.weather)
-            state = {...state, weatherData: action.weather }
+            debugger;
+            console.log(action.weather)
+            return state = {...state, weatherData: action.weather }
             // console.log(state)
         }
         case 'ADD_LOCATION': {

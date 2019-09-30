@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { fetchWeather } from './actions/fetchweather';
 import { addLocation} from './actions/addLocation';
 // import { fetchLocation } from './actions/fetchLocation'
+// import degreeToggle from './components/degreetoggle';
 import './App.css';
 
 
@@ -43,7 +44,6 @@ class App extends React.Component {
 
 
   render() {
-    debugger;
     const temperature = this.props.weather.temp 
     const humidity = this.props.weather.humidity 
   return (

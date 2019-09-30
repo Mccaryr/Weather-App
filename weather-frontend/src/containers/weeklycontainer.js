@@ -3,6 +3,7 @@ import WeeklyForm from '../components/weeklyform';
 import WeeklyWeather from '../components/weeklyweather';
 import { connect } from 'react-redux';
 import { fetchWeeklyWeather } from '../actions/fetchweeklyweather';
+import DegreeToggle from '../components/degreetoggle';
 
 class WeeklyContainer extends React.Component {
 
@@ -18,14 +19,16 @@ class WeeklyContainer extends React.Component {
 
     render() {
         // debugger;
-        // const todaystemperature = this.props.weeklyWeather[0].main.temp
-        // console.log(todaysTemp[0])
+        const tomorrowstemperature = this.props.weeklyWeather.temp
         return (
             <div>
-            <h1>Weekly Weather Data</h1> 
+            <h1>Tomorrow's Temp</h1> 
             <WeeklyForm  submitHandler={this.searchForWeeklyData}/>
             <WeeklyWeather 
-            // todaysTemp = {todaystemperature}
+            tomorrowsTemp = {tomorrowstemperature}
+            />
+            <DegreeToggle 
+            tomorrowsTemp={tomorrowstemperature}
             />
           
             </div>
