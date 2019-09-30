@@ -3,8 +3,9 @@
 }, action) => {
     switch (action.type) {
         case 'FETCH_WEATHER': {
-        // console.log(action.weather)
-        state = {...state, weatherData: action.weather }
+            debugger;
+        console.log(action.weather)
+        return state = {...state, weatherData: action.weather }
         
         // console.log(state)
         // debugger;
@@ -15,6 +16,8 @@
             // console.log(state)
         }
         case 'ADD_LOCATION': {
+            // debugger;
+            console.log(action.payload) 
             state = {...state, weatherData: action.payload }
         }
     default:

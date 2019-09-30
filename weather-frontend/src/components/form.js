@@ -17,8 +17,8 @@ class Form extends React.Component {
 
     render(){
     return (
-        <form >
-        {/* // <form onSubmit={(e)=>this.props.onSubmit(e,this.state)}> */}
+       
+        <form onSubmit={(e)=>this.props.onSubmit(e,this.state)}>
             <input type="text" name="city" placeholder="City" value={this.state.city} onChange={this.handleChange}/>
             <input type ="text" name="country" placeholder="Country" value={this.state.country} onChange={this.handleChange}/>
             <input type="submit" value="submit"/>
@@ -26,4 +26,5 @@ class Form extends React.Component {
     )
     }
 }
-export default connect(null, {addLocation})(Form)
+export default Form
+// export default connect(null, {addLocation})(Form)

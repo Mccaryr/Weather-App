@@ -5,7 +5,6 @@ export const fetchWeather = (city, country) => {
     
      console.log(city, country)
     return dispatch => {
-
         console.log("fetching weather")
         return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`)
         .then(response => response.json())
