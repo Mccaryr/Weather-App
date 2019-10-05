@@ -1,4 +1,5 @@
 export const addLocation = data => {
+
     return dispatch => {
         // debugger;
         fetch('http://localhost:3001/api/v1/locations', {
@@ -10,6 +11,10 @@ export const addLocation = data => {
             body: JSON.stringify(data)   
         })
         .then(resp => resp.json())
-        .then(location => dispatch({type: 'ADD_LOCATION', payload: data }))
-    }
+        .then(location => {
+
+            dispatch({type: 'ADD_LOCATION', payload: data })})
+        }
 }
+
+// ACBD

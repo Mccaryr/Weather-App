@@ -6,9 +6,10 @@ import Weather from './components/weather';
 import { connect } from 'react-redux';
 import { fetchWeather } from './actions/fetchweather';
 import { addLocation} from './actions/addLocation';
-// import { fetchLocation } from './actions/fetchLocation'
+import { fetchLocations } from './actions/fetchLocations'
 // import degreeToggle from './components/degreetoggle';
 import './App.css';
+import Index from './components/index';
 
 
 
@@ -16,19 +17,18 @@ class App extends React.Component {
 
 
 // componentDidMount() {
-//   // fetch('http://localhost:3001/api/v1/locations')
-//   // .then(resp => resp.json())
-//   // .then(data => console.log(data))
-//   this.props.fetchLocation()
+//   this.props.fetchLocations()
 // }
 
   search = (e,inputData) => {
     e.preventDefault();
     console.log(inputData)
-    let city = inputData.city
-    let country = inputData.country 
+    const city = inputData.city
+    const country = inputData.country 
     this.props.fetchWeather(city, country)
-    this.props.addLocation(inputData) 
+    this.props.addLocation(inputData)
+    
+
     // this.setState({
     //   city: '',
     //   country: ''
@@ -44,6 +44,7 @@ class App extends React.Component {
 
 
   render() {
+    debugger;
     const temperature = this.props.weather.temp 
     const humidity = this.props.weather.humidity 
   return (
@@ -55,6 +56,8 @@ class App extends React.Component {
         temp={temperature}
         humid={humidity}
         /> 
+        {/* <Index  locations={this.props.locations}/> */}
+        
       </header>
     </div>
   );
@@ -62,13 +65,11 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { weather: state.weatherData }
+  return { weather: state.weatherData,
+           locations: state.locations }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return { fetchWeather: ()=> dispatch(fetchWeather())
-//   }
-// }
 
-// export default App;
-export default connect(mapStateToProps, {fetchWeather, addLocation})(App)
+
+
+export default connect(mapStateToProps, {fetchWeather, addLocation, fetchLocations })(App)

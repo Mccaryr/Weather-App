@@ -35,6 +35,14 @@ const Navbar = () =>
                 background: 'darkblue'
             }}
             >Weekly Forecast</NavLink>
+        <NavLink 
+            to="/Locations"
+            exact style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+            >Locations</NavLink>
+
     </div>;
 
 export default Navbar;

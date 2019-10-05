@@ -1,5 +1,6 @@
  const fetchWeatherData =(state= {
-    weatherData: []
+    weatherData: [], 
+    locations: []
 }, action) => {
     switch (action.type) {
         case 'FETCH_WEATHER': {
@@ -20,6 +21,12 @@
             // debugger;
             console.log(action.payload) 
             state = {...state, weatherData: action.payload }
+        }
+
+        case 'FETCH_LOCATIONS': {
+            debugger; 
+            console.log("fetch location reducer hit")
+            state = {...state, locations: action.payload}
         }
     default:
     console.log("default hit") 

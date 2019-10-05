@@ -11,7 +11,7 @@ import Navbar from './components/navbar';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import fetchWeatherData from './reducers/weather_reducer';
-
+import Index from './components/index';
 
 
 
@@ -36,6 +36,7 @@ ReactDOM.render(
             <Route exact path="/" component={Title} />
             <Route exact path="/DailyForecast" component={App} />
             <Route exact path="/WeeklyForecast" component={WeeklyContainer} />
+            <Route exact path="/Locations" component={Index} />
         </React.Fragment>
     </Router>
     </Provider>, document.getElementById('root')
